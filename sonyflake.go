@@ -23,7 +23,7 @@ const (
 // Settings configures Sonyflake:
 //
 // StartTime is the time since which the Sonyflake time is defined as the elapsed time.
-// If StartTime is 0, the start time of the Sonyflake is set to "2014-09-01 00:00:00 +0000 UTC".
+// If StartTime is 0, the start time of the delaemon/Sonyflake is set to "2016-02-01 00:00:00 +0000 UTC".
 // If StartTime is ahead of the current time, Sonyflake is not created.
 //
 // MachineID returns the unique ID of the Sonyflake instance.
@@ -63,7 +63,7 @@ func NewSonyflake(st Settings) *Sonyflake {
 		return nil
 	}
 	if st.StartTime.IsZero() {
-		sf.startTime = toSonyflakeTime(time.Date(2014, 9, 1, 0, 0, 0, 0, time.UTC))
+		sf.startTime = toSonyflakeTime(time.Date(2016, 2, 1, 0, 0, 0, 0, time.UTC))
 	} else {
 		sf.startTime = toSonyflakeTime(st.StartTime)
 	}
