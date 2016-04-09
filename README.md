@@ -16,7 +16,7 @@ Installation
 ------------
 
 ```
-go get github.com/sony/sonyflake
+go get github.com/delaemon/sonyflake
 ```
 
 Usage
