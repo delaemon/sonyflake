@@ -49,12 +49,12 @@ type Sonyflake struct {
 	machineID   uint16
 }
 
-// NewSonyflake returns a new Sonyflake configured with the given Settings.
-// NewSonyflake returns nil in the following cases:
+// New returns a new Sonyflake configured with the given Settings.
+// New returns nil in the following cases:
 // - Settings.StartTime is ahead of the current time.
 // - Settings.MachineID returns an error.
 // - Settings.CheckMachineID returns false.
-func NewSonyflake(st Settings) *Sonyflake {
+func New(st Settings) *Sonyflake {
 	sf := new(Sonyflake)
 	sf.mutex = new(sync.Mutex)
 	sf.sequence = uint16(1<<BitLenSequence - 1)
